@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟打字效果</title>
+    <script src="./jquery-2.2.4.js"></script>
+    <style>
+        div.container { position: relative; width: 60%; margin: auto; height: 900px; background-image: url('http://t1.niutuku.com/960/24/24-617747.jpg'); background-size: 100% auto; background-repeat: no-repeat; }
+        div.text-box { position: absolute; width: 80%; height: 75%; left: 10%; top: 10%; }
+        div.text-box .write-h1 {text-align: center; font-family: '宋体';}
+        div.text-box p {text-indent: 2em; line-height: 2em;}
+        div.text-box .write-signature {width: 10em; margin-left: 70%;}
+        div.container span.cursor { border-bottom: 2px solid #333; animation: twinkle 1s infinite ;}
+        @keyframes twinkle {
+            from { border-color: #333; }
+            50% { border-color: #333; }
+            50.01% { border-color: transparent; }
+            to { border-color: transparent; }
+        }
+    </style>
+    <script src="./write.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="text-box"></div>
+        <audio loop>
+            <source src="./6865.wav" type="audio/ogg">
+            <source src="./6865.wav" type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        var text = '我听见雨滴落在青青草地，我听见远方下课钟声响起，可是我没有听见你的声音，认真呼唤我姓名。\n爱上你的时候还不懂感情，离别了才觉得刻骨铭心，为什么没有发现遇见了你，是生命最好的事情。也许当时忙着微笑和哭泣，忙着追逐天空中的流星。\n人理所当然的忘记，是谁风里雨里一直默默守护在原地。\n原来你是我最想留住的幸运，原来我们和爱情曾经靠得那么近，那为我对抗世界的决定，那陪我淋的雨，一幕幕都是你，一尘不染的真心。\n与你相遇好幸运，可我已失去为你泪流满面的权利，但愿在我看不到的天际，你张开了双翼，遇见你的注定 (oh--)，她会有多幸运。\n青春是段跌跌撞撞的旅行，拥有着后知后觉的美丽，来不及感谢是你给我勇气，让我能做回我自己，也许当时忙着微笑和哭泣，忙着追逐天空中的流星，人理所当然的忘记，是谁风里雨里一直默默守护在原地。\n原来你是我最想留住的幸运，原来我们和爱情曾经靠得那么近，那为我对抗世界的决定，那陪我淋的雨，一幕幕都是你，一尘不染的真心，与你相遇好幸运，可我已失去为你泪流满面的权利，但愿在我看不到的天际，你张开了双翼，遇见你的注定 (oh--)，她会有多幸运。'        
+
+        var xxyObj = {
+            title: '小幸运',
+            box: '.text-box',
+            signature: '田馥甄',
+            text: text
+        }
+
+        var xiaoxingyun = new WRITE(xxyObj)
+    </script>
+</body>
+</html>
